@@ -14,6 +14,7 @@ import NavBar from "./state-management/NavBar";
 import HomePage from "./state-management/HomePage";
 import AuthContext from "./state-management/context/authContext";
 import AuthProvider from "./state-management/AuthProvider";
+import TaskProvider from "./state-management/TaskProvider";
 function App() {
   const [tasks, taskDispatch] = useReducer(taskReducer, []);
   return (
@@ -38,10 +39,10 @@ function App() {
       <Counter /> */}
       <h2>Sharing State with react Context</h2>
       <AuthProvider>
-        <TaskContext.Provider value={{ tasks, dispatch: taskDispatch }}>
+        <TaskProvider>
           <NavBar />
           <HomePage />
-        </TaskContext.Provider>
+        </TaskProvider>
       </AuthProvider>
       {/* <LoginStatus /> */}
     </>

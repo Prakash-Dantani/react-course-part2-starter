@@ -1,7 +1,12 @@
-import TaskList from './TaskList';
+import TaskList from "./TaskList";
 
 const HomePage = () => {
-  return <TaskList />;
+  return (
+    <>
+      <TaskList />
+      {/* <h2>APPLE</h2> */}
+    </>
+  );
 };
 
 export default HomePage;

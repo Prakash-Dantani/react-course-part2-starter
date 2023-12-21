@@ -1,11 +1,7 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import axios from "axios";
-
-import { Todo } from "./useTodos";
 import { CACHE_KEY_TODOS } from "../react-query/constants";
-import APIClient from "../react-query/services/apiClients";
+import todoService, { Todo } from "../react-query/services/todoService";
 
-const apiClient = new APIClient<Todo>('/todos');
 interface AddTodoContext {
     previousTodo?: Todo[];
   }
@@ -15,7 +11,7 @@ const useAddTodo = (onAdd:()=>void) => {
     const queryClient = useQueryClient();
 
   return useMutation<Todo, Error, Todo, AddTodoContext>({
-    mutationFn: apiClient.post,  
+    mutationFn: todoService.post,  
     
     onMutate: (newTodo: Todo) => {
       // Get Todos List before saving datainto chache because if serve face some error than we have to make list in its actual list.

@@ -3,7 +3,7 @@ import usePosts from "../hooks/usePosts";
 
 const PostList = () => {
   const [userId, setUserId] = useState<number>();
-  const { data: posts, error, isLoading } = usePosts(userId);
+  const { data: posts, error, isLoading } = usePosts({ page: 1, pageSize: 20 });
   if (error) return <p>{error.message}</p>;
 
   return (

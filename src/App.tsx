@@ -5,18 +5,16 @@ import Pagination from "./react-query/Pagination";
 import PostList from "./react-query/PostList";
 import TodoForm from "./react-query/TodoForm";
 import TodoList from "./react-query/TodoList";
-import Counter from "./state-management/Counter";
-import LoginStatus from "./state-management/LoginStatus";
-import TaskList from "./state-management/TaskList";
-import taskReducer from "./state-management/reducers/TaskReducer";
-import TaskContext from "./state-management/context/taskContext";
+import Counter from "./state-management/counter/Counter";
+import LoginStatus from "./state-management/auth/LoginStatus";
+import TaskList from "./state-management/tasks/TaskList";
+import TaskContext from "./state-management/tasks/taskContext";
 import NavBar from "./state-management/NavBar";
 import HomePage from "./state-management/HomePage";
-import AuthContext from "./state-management/context/authContext";
-import AuthProvider from "./state-management/AuthProvider";
-import TaskProvider from "./state-management/TaskProvider";
+import AuthContext from "./state-management/auth/authContext";
+import AuthProvider from "./state-management/auth/AuthProvider";
+import { TaskProvider } from "./state-management/tasks";
 function App() {
-  const [tasks, taskDispatch] = useReducer(taskReducer, []);
   return (
     <>
       {/* <h1>Post List</h1>

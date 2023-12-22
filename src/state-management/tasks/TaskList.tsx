@@ -1,8 +1,7 @@
 import { useContext, useReducer, useState } from "react";
-import taskReducer from "./reducers/TaskReducer";
-import TaskContext from "./context/taskContext";
-import useTasks from "../hooks/useTasks";
-import useAuth from "../hooks/useAuth";
+import TaskContext from "./taskContext";
+import useAuth from "../auth/useAuth";
+const useTasks = () => useContext(TaskContext);
 
 interface Task {
   id: number;

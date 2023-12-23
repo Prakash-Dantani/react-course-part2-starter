@@ -36,6 +36,7 @@ function App() {
       {/* Reducers Example 
       <Counter /> */}
       <h2>Sharing State with react Context</h2>
+      <Counter />
       <AuthProvider>
         <TaskProvider>
           <NavBar />
